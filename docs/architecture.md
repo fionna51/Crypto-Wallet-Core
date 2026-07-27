@@ -15,3 +15,6 @@ Emit UTC ISO-8601 timestamps with flat `key=value` context fields for easy log p
 
 ### Shutdown Checklist
 Flush in-flight metrics snapshots and release local file locks before exiting worker loops.
+
+### Retry Strategy
+Prefer bounded exponential backoff with full jitter to avoid synchronized worker spikes during upstream degradation.
